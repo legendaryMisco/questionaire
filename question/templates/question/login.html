@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{% static 'style/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'style/preset-css.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="content-overlay">
+                <div class="content-header">                
+                    <h2 class="header-title">
+                        Welcome
+                    </h2>
+                </div>
+
+                <div class="content-body">
+                    <form  class="form" method="post">
+                        {% csrf_token %}
+                        <!-- <label for="username">Label</label> -->
+                        <input type="text" placeholder="Enter name" name="name">
+                        <!-- <input type="submit" id="submit-btn" value="Login"> -->
+                        <button type="submit" id="submit-btn">submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

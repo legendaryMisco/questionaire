@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/preset-css.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="content-overlay">
+                <div class="content-header">                
+                    <h2 class="header-title">
+                        {{questions}}
+                    </h2>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                <div class="content-body">
+                    <textarea name="choice" id="" cols="50" rows="3"></textarea>
+                </div>
+
+                <div class="content-btn-contaienr">
+                       <a href="{{request.META.HTTP_REFERER}}" style="font-family: inherit;
+    font-size: inherit;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    background-color: var(--button-base); color:black; text-decoration:none;" class="prev-btn">Prev</a>
+                        <button type="submit" class="next-btn">Next</button>
+                    <!-- add your last page to the lik -->
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
